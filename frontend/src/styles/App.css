@@ -77,7 +77,6 @@ body {
   color: white;
 }
 
-/* Main Content */
 .main-content {
   flex: 1;
   max-width: 1200px;
@@ -86,7 +85,6 @@ body {
   padding: 0 2rem;
 }
 
-/* Items Board */
 .items-board {
   background: white;
   border-radius: 12px;
@@ -109,7 +107,6 @@ body {
   color: #666;
 }
 
-/* Search and Filter */
 .search-filter {
   margin-bottom: 2rem;
 }
@@ -163,14 +160,12 @@ body {
   background: #e0e0e0;
 }
 
-/* Items Grid */
 .items-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
 }
 
-/* Item Card */
 .item-card {
   background: white;
   border: 2px solid #e0e0e0;
@@ -438,7 +433,6 @@ body {
   100% { transform: rotate(360deg); }
 }
 
-/* Empty State */
 .empty-state {
   text-align: center;
   padding: 3rem;
@@ -459,7 +453,6 @@ body {
   color: #666;
 }
 
-/* Footer */
 .footer {
   background: white;
   padding: 1.5rem;
@@ -469,7 +462,6 @@ body {
   margin-top: 2rem;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;

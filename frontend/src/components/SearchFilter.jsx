@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const SearchFilter = ({ filters, setFilters }) => {
   const handleSearchChange = (e) => {
@@ -14,7 +14,7 @@ const SearchFilter = ({ filters, setFilters }) => {
   };
 
   const clearFilters = () => {
-    setFilters({ search: '', condition: '', status: '' });
+    setFilters({ search: "", condition: "", status: "" });
   };
 
   return (

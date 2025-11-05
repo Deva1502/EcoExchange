@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { itemsAPI } from '../services/api';
-import ItemCard from './ItemCard';
-import SearchFilter from './SearchFilter';
+import React, { useState, useEffect } from "react";
+import { itemsAPI } from "../services/api";
+import ItemCard from "./ItemCard";
+import SearchFilter from "./SearchFilter";
 
 const ItemsBoard = () => {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [filters, setFilters] = useState({
-    search: '',
-    condition: '',
-    status: ''
+    search: "",
+    condition: "",
+    status: "",
   });
 
   const fetchItems = async () => {
     setLoading(true);
-    setError('');
+    setError("");
     try {
       const data = await itemsAPI.getItems(filters);
       setItems(data.data);
     } catch (err) {
-      setError('Failed to load items. Please try again.');
+      setError("Failed to load items. Please try again.");
       console.error(err);
     } finally {
       setLoading(false);

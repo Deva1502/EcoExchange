@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Navbar = ({ currentView, setCurrentView }) => {
   return (
@@ -10,14 +10,14 @@ const Navbar = ({ currentView, setCurrentView }) => {
         </div>
         <div className="nav-links">
           <button
-            className={currentView === 'board' ? 'active' : ''}
-            onClick={() => setCurrentView('board')}
+            className={currentView === "board" ? "active" : ""}
+            onClick={() => setCurrentView("board")}
           >
             Items Board
           </button>
           <button
-            className={currentView === 'add' ? 'active' : ''}
-            onClick={() => setCurrentView('add')}
+            className={currentView === "add" ? "active" : ""}
+            onClick={() => setCurrentView("add")}
           >
             Add Item
           </button>

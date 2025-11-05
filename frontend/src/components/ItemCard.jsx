@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { itemsAPI } from '../services/api';
+import React, { useState } from "react";
+import { itemsAPI } from "../services/api";
 
 const ItemCard = ({ item, onStatusUpdate }) => {
   const [loading, setLoading] = useState(false);
@@ -7,28 +7,30 @@ const ItemCard = ({ item, onStatusUpdate }) => {
   const toggleStatus = async () => {
     setLoading(true);
     try {
-      const newStatus = item.status === 'available' ? 'exchanged' : 'available';
+      const newStatus = item.status === "available" ? "exchanged" : "available";
       await itemsAPI.updateItem(item._id, { status: newStatus });
       if (onStatusUpdate) onStatusUpdate();
     } catch (error) {
-      console.error('Error updating status:', error);
-      alert('Failed to update status');
+      console.error("Error updating status:", error);
+      alert("Failed to update status");
     } finally {
       setLoading(false);
     }
   };
 
   const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    const options = { year: "numeric", month: "short", day: "numeric" };
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
 
   return (
-    <div className={`item-card ${item.status === 'exchanged' ? 'exchanged' : ''}`}>
+    <div
+      className={`item-card ${item.status === "exchanged" ? "exchanged" : ""}`}
+    >
       <div className="item-image">
         <img src={item.image} alt={item.name} />
         <span className={`status-badge ${item.status}`}>
-          {item.status === 'available' ? '✓ Available' : '✗ Exchanged'}
+          {item.status === "available" ? "✓ Available" : "✗ Exchanged"}
         </span>
       </div>
 
@@ -56,7 +58,11 @@ const ItemCard = ({ item, onStatusUpdate }) => {
           onClick={toggleStatus}
           disabled={loading}
         >
-          {loading ? 'Updating...' : `Mark as ${item.status === 'available' ? 'Exchanged' : 'Available'}`}
+          {loading
+            ? "Updating..."
+            : `Mark as ${
+                item.status === "available" ? "Exchanged" : "Available"
+              }`}
         </button>
       </div>
     </div>
